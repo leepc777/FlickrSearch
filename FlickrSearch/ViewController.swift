@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FlickrSearch
 //
-//  Created by peicheng lee on 12/8/21.
+//  Created by Patrick lee on 12/8/21.
 //
 
 import UIKit
