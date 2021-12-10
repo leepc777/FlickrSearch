@@ -53,17 +53,20 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
         
-        //        cell.textLabel?.text = imageURLStrings[indexPath.row]
-        //        cell.ulrString = imageURLStrings[indexPath.row]
-        let urlString = imageURLs[indexPath.row].absoluteString
-//        cell.textLabel?.text = urlString
-//        cell.urlString = urlString
+//        let urlString = imageURLs[indexPath.row].absoluteString
         cell.url = imageURLs[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(" you tapped tableView cell at indexPath:\(indexPath)")
+        
+        let url = imageURLs[indexPath.row]
+        guard let cachedImage = imageCache.object(forKey: url as AnyObject) as? UIImage else {return}
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
+        nextVC.url = url
+        nextVC.image = cachedImage
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

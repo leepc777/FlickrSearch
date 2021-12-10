@@ -71,7 +71,7 @@ class FlickrAPI {
         var imageURLs = [URL]()
         let photoArray = json["photos"]["photo"].arrayValue
         
-        for i in 0 ..< photoArray.count where imageURLs.count < 25 {
+        for i in 0 ..< photoArray.count where imageURLs.count < 100 {
             
             let title = photoArray[i]["title"].stringValue
             let urlString = photoArray[i]["url_l"].stringValue

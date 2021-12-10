@@ -17,6 +17,7 @@
 		117DDF6D2762DCCD003912E0 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DDF6C2762DCCD003912E0 /* PhotoTableViewCell.swift */; };
 		117DDF6F2762E20C003912E0 /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DDF6E2762E20C003912E0 /* PhotoData.swift */; };
 		117DDF712762F691003912E0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DDF702762F691003912E0 /* SwiftyJSON.swift */; };
+		117DDF73276336C1003912E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DDF72276336C1003912E0 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		117DDF6C2762DCCD003912E0 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		117DDF6E2762E20C003912E0 /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
 		117DDF702762F691003912E0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		117DDF72276336C1003912E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				117DDF6E2762E20C003912E0 /* PhotoData.swift */,
 				117DDF702762F691003912E0 /* SwiftyJSON.swift */,
 				113D97092760A7EF00BD85C5 /* Main.storyboard */,
+				117DDF72276336C1003912E0 /* DetailViewController.swift */,
 				113D970F2760A7F200BD85C5 /* Assets.xcassets */,
 				113D97112760A7F200BD85C5 /* LaunchScreen.storyboard */,
 				113D97142760A7F200BD85C5 /* Info.plist */,
@@ -252,6 +255,7 @@
 				113D970E2760A7EF00BD85C5 /* FlickrSearch.xcdatamodeld in Sources */,
 				117DDF712762F691003912E0 /* SwiftyJSON.swift in Sources */,
 				113D97062760A7EF00BD85C5 /* SceneDelegate.swift in Sources */,
+				117DDF73276336C1003912E0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
