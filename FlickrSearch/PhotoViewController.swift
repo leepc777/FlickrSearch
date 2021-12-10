@@ -46,14 +46,12 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return imageURLStrings.count
         return imageURLs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
         
-//        let urlString = imageURLs[indexPath.row].absoluteString
         cell.url = imageURLs[indexPath.row]
         return cell
     }

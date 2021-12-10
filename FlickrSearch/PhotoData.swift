@@ -7,7 +7,6 @@
 
 import UIKit
 
-//var imageURLStrings = ["a","b","c","d","e"]
 var imageURLStrings = [String]()
 var imageURLs = [URL]()
 var imageCache: NSCache<AnyObject, AnyObject> = NSCache()
@@ -45,10 +44,8 @@ class FlickrAPI {
         return components.url!
     }
     
-//    static func downloadData(with urlString:String,completion:@escaping (_ data:Data?,_ error:Error?)->Void) {
     static func downloadData(with url:URL,completion:@escaping (_ data:Data?,_ error:Error?)->Void) {
 
-//        guard let url =  URL(string: urlString) else {return}
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let validData = data, error == nil else {
@@ -71,16 +68,16 @@ class FlickrAPI {
         var imageURLs = [URL]()
         let photoArray = json["photos"]["photo"].arrayValue
         
-        for i in 0 ..< photoArray.count where imageURLs.count < 100 {
+        for i in 0 ..< photoArray.count where imageURLs.count < 200 {
             
             let title = photoArray[i]["title"].stringValue
             let urlString = photoArray[i]["url_l"].stringValue
             
-            if title.lowercased().contains(text.lowercased()) {
+//            if title.lowercased().contains(text.lowercased()) {
                 if let url = URL(string: urlString) {
                     imageURLs.append(url)
                 }
-            }
+//            }
             
         }
         

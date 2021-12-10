@@ -56,7 +56,7 @@ extension DetailViewController : UIScrollViewDelegate {
     }
     
     
-    //
+    //scale image to fit scrollView
     func setZoomScale() {
         
         let imageViewSize = imageView.bounds.size
@@ -87,4 +87,9 @@ extension DetailViewController : UIScrollViewDelegate {
         print("viewWillLayoutSubviews() is called")
     }
 
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        print("--- scrollViewDidZoom() is called")
+
+//        imageView.center = scrollView.center
+    }
 }
