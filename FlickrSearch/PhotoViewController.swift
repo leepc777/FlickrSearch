@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var imageURLStrings = ["a","b","c","d","e"]
+//    var imageURLStrings = ["a","b","c","d","e"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +50,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "aCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
         
         cell.textLabel?.text = imageURLStrings[indexPath.row]
+        cell.ulrString = imageURLStrings[indexPath.row]
         return cell
     }
     
@@ -62,10 +63,30 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
 }
 
-extension ViewController : UISearchBarDelegate {
+extension PhotoViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search button clicked to search :\(searchBar.searchTextField.text)")
+        
+        guard let searchText = searchBar.text else {return}
+        
+        if searchText == "" {
+            
+        } else {
+            let requestURL = FlickrAPI.buildRequestURL(text: searchText)
+            FlickrAPI.downloadData(with: requestURL) { data, error in
+                guard let data = data, let json = try? JSON(data:data) else {
+                    print("failed to download data from Flickr, error:\(error?.localizedDescription)")
+                    return
+                }
+                
+                let urls = FlickrAPI.parseJSON_Search(with: searchText, json: json)
+                imageURLs = urls
+                print(" ===> imageURLs:\(imageURLs)")
+            }
+
+        }
+        
         
         DispatchQueue.main.async {
             searchBar.resignFirstResponder()
