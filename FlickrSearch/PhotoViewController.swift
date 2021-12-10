@@ -29,7 +29,7 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableViewSetup() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = self.view.frame.size.height/4
+        tableView.rowHeight = self.view.frame.size.height/3
         tableView.keyboardDismissMode = .onDrag
     }
     
@@ -46,14 +46,19 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageURLStrings.count
+//        return imageURLStrings.count
+        return imageURLs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
         
-        cell.textLabel?.text = imageURLStrings[indexPath.row]
-        cell.ulrString = imageURLStrings[indexPath.row]
+        //        cell.textLabel?.text = imageURLStrings[indexPath.row]
+        //        cell.ulrString = imageURLStrings[indexPath.row]
+        let urlString = imageURLs[indexPath.row].absoluteString
+//        cell.textLabel?.text = urlString
+//        cell.urlString = urlString
+        cell.url = imageURLs[indexPath.row]
         return cell
     }
     
@@ -82,6 +87,9 @@ extension PhotoViewController : UISearchBarDelegate {
                 
                 let urls = FlickrAPI.parseJSON_Search(with: searchText, json: json)
                 imageURLs = urls
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 print(" ===> imageURLs:\(imageURLs)")
             }
 

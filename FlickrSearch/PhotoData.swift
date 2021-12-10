@@ -7,7 +7,8 @@
 
 import UIKit
 
-var imageURLStrings = ["a","b","c","d","e"]
+//var imageURLStrings = ["a","b","c","d","e"]
+var imageURLStrings = [String]()
 var imageURLs = [URL]()
 var imageCache: NSCache<AnyObject, AnyObject> = NSCache()
 
