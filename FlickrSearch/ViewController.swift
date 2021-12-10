@@ -12,17 +12,35 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
 
     @IBOutlet weak var tableView: UITableView!
-    var imageURLStrings = ["a","b","c"]
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var imageURLStrings = ["a","b","c","d","e"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableView.reloadData()
+        
+        tableViewSetup()
+        searchBarSetup()
+    }
+
+    
+
+    func tableViewSetup() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = self.view.frame.size.height/4
-//        tableView.reloadData()
+        tableView.keyboardDismissMode = .onDrag
     }
-
-
+    
+    func searchBarSetup() {
+        
+        searchBar.delegate = self
+        searchBar.autocapitalizationType = .none
+        
+    }
+    
+    //MARK: tableView DataSource and Delegae methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -44,3 +62,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
 }
 
+extension ViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search button clicked to search :\(searchBar.searchTextField.text)")
+        
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
+        }
+    }
+}
