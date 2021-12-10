@@ -7,7 +7,7 @@
 
 import UIKit
 
-var imageURLStrings = [String]()
+//var imageURLStrings = [String]()
 var imageURLs = [URL]()
 var imageCache: NSCache<AnyObject, AnyObject> = NSCache()
 
@@ -61,7 +61,7 @@ class FlickrAPI {
     }
     
     
-    //Use SwiftyJSON to parse response json :  photos.photo[0].url_l
+    //SwiftyJSON to parse response json :  photos.photo[0].url_l
     // Filter URLs, only return URLs that have matching title
     class func parseJSON_Search(with text:String, json:JSON) -> [URL] {
         
@@ -73,6 +73,7 @@ class FlickrAPI {
             let title = photoArray[i]["title"].stringValue
             let urlString = photoArray[i]["url_l"].stringValue
             
+            //TODO: Temporarily disable filter, to display more photos to test performance
 //            if title.lowercased().contains(text.lowercased()) {
                 if let url = URL(string: urlString) {
                     imageURLs.append(url)

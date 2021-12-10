@@ -35,7 +35,7 @@ class PhotoTableViewCell : UITableViewCell {
         aImageView.contentMode = .scaleAspectFill
         guard let url = url else {return}
         
-        aSpinner.style = .whiteLarge
+        aSpinner.style = .large
         aSpinner.hidesWhenStopped = true
         aSpinner.startAnimating()
         
@@ -55,7 +55,7 @@ class PhotoTableViewCell : UITableViewCell {
                 }
                 
                 DispatchQueue.main.async {
-                    let downloadedImage = UIImage(data: data!)
+                    let downloadedImage = UIImage(data: validData)
                     self.aImageView.image = downloadedImage
                     self.aSpinner.stopAnimating()
                     imageCache.setObject(downloadedImage!, forKey: url as AnyObject)

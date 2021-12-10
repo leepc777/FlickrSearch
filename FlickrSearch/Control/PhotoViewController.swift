@@ -72,7 +72,7 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 extension PhotoViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("search button clicked to search :\(searchBar.searchTextField.text)")
+        print("search button clicked to search :\(String(describing: searchBar.searchTextField.text))")
         
         guard let searchText = searchBar.text else {return}
         
@@ -82,7 +82,7 @@ extension PhotoViewController : UISearchBarDelegate {
             let requestURL = FlickrAPI.buildRequestURL(text: searchText)
             FlickrAPI.downloadData(with: requestURL) { data, error in
                 guard let data = data, let json = try? JSON(data:data) else {
-                    print("failed to download data from Flickr, error:\(error?.localizedDescription)")
+                    print("failed to download data from Flickr, error:\(String(describing: error?.localizedDescription))")
                     return
                 }
                 
