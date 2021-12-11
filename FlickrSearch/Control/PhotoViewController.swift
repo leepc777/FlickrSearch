@@ -1,10 +1,24 @@
 //
-//  ViewController.swift
+//  PhotoViewController.swift
 //  FlickrSearch
 //
 //  Created by Patrick lee on 12/8/21.
 //
 
+/*
+ 
+ PhotoViewController : a TableView controller
+ SearchBar:
+    - Take user's input
+    - Trigger actions to build requestURL and download photo urls to TableView's Data Source: imageURLs
+ TableView:
+    - pass url to TableView Cell : PhotoTableViewCell
+    - TableView Cell is the one doing the hardwork ( request and display Flicr image when download is completed )
+    - Tap a row will transit to DetailViewController to display and scroll that image in full size.
+    - TableView only transit to DetailViewController when image exist in imageCache. This is to insure users can only open a image after image is downloaded.
+ 
+ 
+ */
 import UIKit
 
 class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {

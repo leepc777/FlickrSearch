@@ -5,6 +5,18 @@
 //  Created by peicheng lee on 12/9/21.
 //
 
+/*
+ 
+ PhotoTableViewCell : a TableView Cell
+  - not only a simple view, it is responsible to download image after receiving url from tableView controller.
+ 
+  - NSCache
+    * Cache write: store key(url) - value(imageData) for every downloaed Flicr image.
+    * Cache read : Check if cache contains the image that tableView controller request, before submit the requestURL to Flickr.
+ 
+ 
+ */
+
 import UIKit
 
 class PhotoTableViewCell : UITableViewCell {

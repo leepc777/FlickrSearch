@@ -5,6 +5,14 @@
 //  Created by peicheng lee on 12/9/21.
 //
 
+/*
+ 
+ DetailViewController : a viewController with Scroll View
+    - Triggered and recieve the image sent by TableView controller
+    
+ 
+ 
+ */
 import UIKit
 
 class DetailViewController: UIViewController {

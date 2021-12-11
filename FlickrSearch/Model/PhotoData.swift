@@ -7,8 +7,10 @@
 
 import UIKit
 
-//var imageURLStrings = [String]()
+// Data Source for tableView
 var imageURLs = [URL]()
+
+// NSCache to cache all downloaded images
 var imageCache: NSCache<AnyObject, AnyObject> = NSCache()
 
 
