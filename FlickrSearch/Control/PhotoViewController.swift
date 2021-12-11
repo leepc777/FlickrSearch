@@ -2,7 +2,7 @@
 //  PhotoViewController.swift
 //  FlickrSearch
 //
-//  Created by Patrick lee on 12/8/21.
+//  Created by Patrick Lee on 12/8/21.
 //
 
 /*

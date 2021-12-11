@@ -2,7 +2,7 @@
 //  PhotoData.swift
 //  FlickrSearch
 //
-//  Created by peicheng lee on 12/9/21.
+//  Created by Patrick Lee on 12/9/21.
 //
 
 import UIKit
