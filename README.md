@@ -11,8 +11,8 @@
 * Interact with **RESTful** Flickr API
 * **GCD**, **multi-threaded** and **asynchronous codes** for internet access.
 * Use **NSCache** to cache downloaded images to improve performance.
-* use Instrument to confirm 60FPS performance.
-* Unit Tests to test API : RequestURL is properly generated and successfully asynchronously download image through Flicr API
+* use **Instrument** to confirm **60FPS** performance.
+* **Unit Tests** to test API : RequestURL is properly generated and successfully asynchronously download image through Flicr API
 
 ## Resource
 * Flickr API Document ([here](https://www.flickr.com/services/api/))
