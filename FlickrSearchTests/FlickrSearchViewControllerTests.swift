@@ -14,7 +14,7 @@ class FlickrSearchViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyBoard.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
+        sut = storyBoard.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController
         sut.loadViewIfNeeded()
     }
 

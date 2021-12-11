@@ -12,15 +12,6 @@ class PhotoTableViewCell : UITableViewCell {
     @IBOutlet weak var aImageView: UIImageView!
     @IBOutlet weak var aSpinner: UIActivityIndicatorView!
     
-//    var urlString = String() {
-//
-//        didSet {
-//
-//            setupUI()
-//        }
-//
-//    }
-    
     var url = URL(string: "") {
         
         didSet {
@@ -29,7 +20,7 @@ class PhotoTableViewCell : UITableViewCell {
         }
         
     }
-
+    
     
     func setupUI() {
         aImageView.contentMode = .scaleAspectFill

@@ -14,12 +14,8 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-//    var imageURLStrings = ["a","b","c","d","e"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.reloadData()
-        
         tableViewSetup()
         searchBarSetup()
     }

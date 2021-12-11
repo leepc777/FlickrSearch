@@ -73,10 +73,6 @@ extension DetailViewController : UIScrollViewDelegate {
          
         
         imageView.center = scrollView.center
-        print("--- setZoomScale() is called, miniScale:\(minScale)")
-        print("self.view:\(self.view.frame) , scrollView:\(self.scrollView.frame), imageView:\(imageView.frame)")
-         
-         
          
 
     }
@@ -84,12 +80,9 @@ extension DetailViewController : UIScrollViewDelegate {
     // MARK: layout ScrollView
     override func viewWillLayoutSubviews() {
         setZoomScale()
-        print("viewWillLayoutSubviews() is called")
     }
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        print("--- scrollViewDidZoom() is called")
-
 //        imageView.center = scrollView.center
     }
 }
