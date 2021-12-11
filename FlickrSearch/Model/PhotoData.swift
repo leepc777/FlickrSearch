@@ -40,7 +40,7 @@ class FlickrAPI {
         components.queryItems!.append(queryNojsoncallback)
         components.queryItems!.append(queryPage)
         
-        
+//        print("  --- buildRequestURL() built a url:\(components.url!) ")
         return components.url!
     }
     
@@ -73,7 +73,7 @@ class FlickrAPI {
             let title = photoArray[i]["title"].stringValue
             let urlString = photoArray[i]["url_l"].stringValue
             
-            //TODO: Temporarily disable filter, to display more photos to test performance
+            //TODO: Temporarily disable filter, to display more photos to test performance. Put it back if needed.
 //            if title.lowercased().contains(text.lowercased()) {
                 if let url = URL(string: urlString) {
                     imageURLs.append(url)

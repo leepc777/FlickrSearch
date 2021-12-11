@@ -12,14 +12,14 @@ class PhotoTableViewCell : UITableViewCell {
     @IBOutlet weak var aImageView: UIImageView!
     @IBOutlet weak var aSpinner: UIActivityIndicatorView!
     
-    var urlString = String() {
-        
-        didSet {
-            
-            setupUI()
-        }
-        
-    }
+//    var urlString = String() {
+//
+//        didSet {
+//
+//            setupUI()
+//        }
+//
+//    }
     
     var url = URL(string: "") {
         
@@ -39,16 +39,14 @@ class PhotoTableViewCell : UITableViewCell {
         aSpinner.hidesWhenStopped = true
         aSpinner.startAnimating()
         
-        
-        print("PhotoCell received URL from tableView :\(urlString)")
-        
         if let cachedImage = imageCache.object(forKey: url as AnyObject) as? UIImage {
             aImageView.image = cachedImage
             aSpinner.stopAnimating()
             print(" ==> found image in imageCache")
         } else  {
             
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            FlickrAPI.downloadData(with: url) { data, error in
+                
                 guard let validData = data , error == nil else {
                     print(" fail to download image at url:\(url)")
                     return
@@ -60,8 +58,7 @@ class PhotoTableViewCell : UITableViewCell {
                     self.aSpinner.stopAnimating()
                     imageCache.setObject(downloadedImage!, forKey: url as AnyObject)
                 }
-                
-            }.resume()
+            }
             
         }
         

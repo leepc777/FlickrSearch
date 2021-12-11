@@ -11,7 +11,7 @@
         <!--Photo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PhotoViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" id="BYZ-38-t0r" customClass="PhotoViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NiZ-qi-xYx">
-                                                    <rect key="frame" x="8" y="8" width="398" height="280"/>
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="288"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="v83-i9-nP0">
                                                     <rect key="frame" x="197" y="138" width="20" height="20"/>
@@ -44,7 +44,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="v83-i9-nP0" firstAttribute="centerX" secondItem="Luq-Hd-yer" secondAttribute="centerX" id="2jv-uu-6bk"/>
-                                                <constraint firstItem="NiZ-qi-xYx" firstAttribute="top" secondItem="Luq-Hd-yer" secondAttribute="top" constant="8" id="H1g-CO-954"/>
+                                                <constraint firstItem="NiZ-qi-xYx" firstAttribute="top" secondItem="Luq-Hd-yer" secondAttribute="top" id="H1g-CO-954"/>
                                                 <constraint firstItem="v83-i9-nP0" firstAttribute="centerY" secondItem="Luq-Hd-yer" secondAttribute="centerY" id="QU3-n3-Gvk"/>
                                                 <constraint firstAttribute="bottom" secondItem="NiZ-qi-xYx" secondAttribute="bottom" constant="8" id="bad-5W-BK8"/>
                                                 <constraint firstAttribute="trailing" secondItem="NiZ-qi-xYx" secondAttribute="trailing" constant="8" id="dGj-cE-0md"/>

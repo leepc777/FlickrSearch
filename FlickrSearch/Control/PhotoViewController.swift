@@ -53,6 +53,7 @@ class PhotoViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoTableViewCell
         
         cell.url = imageURLs[indexPath.row]
+        title = cell.url?.absoluteString
         return cell
     }
     
@@ -91,7 +92,7 @@ extension PhotoViewController : UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                print(" ===> imageURLs:\(imageURLs)")
+//                print(" ===> imageURLs:\(imageURLs)")
             }
 
         }
